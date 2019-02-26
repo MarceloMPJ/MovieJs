@@ -37,7 +37,7 @@ div(class='card')
 </div>
 </template>
 
-<script>
+<script lang="coffee">
 </script>
 
 <style lang="scss" scoped>

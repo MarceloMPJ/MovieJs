@@ -17,7 +17,7 @@ div
     button(class='btn btn-success') Adicionar
 </template>
 
-<script>
+<script lang="coffee">
 </script>
 
 <style lang="scss" scoped>

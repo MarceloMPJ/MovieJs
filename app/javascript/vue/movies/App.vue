@@ -9,21 +9,18 @@ div(class='container')
       Favorites
 </template>
 
-<script>
+<script lang="coffee">
 import Movies    from './components/Movies'
 import Form      from './components/Form'
 import Favorites from './components/Favorites'
 
-export default {
-  data: function () {
-    return {}
-  },
+export default
+  data: () => {}
   components: {
     Movies,
     Form,
     Favorites
   }
-}
 </script>
 
 <style lang="scss" scoped>
