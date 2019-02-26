@@ -14,7 +14,7 @@ div
         option Aventura
         option Comédia
         option Terror
-    buton(class='btn btn-success') Adicionar
+    button(class='btn btn-success') Adicionar
 </template>
 
 <script>
