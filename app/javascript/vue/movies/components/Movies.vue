@@ -16,7 +16,7 @@ div(class='card')
           li(class='list-group-item') Filme 7 <a href="#">☆</a> <a href="#">x</a>
 </template>
 
-<script>
+<script lang="coffee">
 </script>
 
 <style lang="scss" scoped>

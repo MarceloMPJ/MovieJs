@@ -2,7 +2,7 @@ import Vue from 'vue/dist/vue.esm'
 import TurbolinksAdapter from 'vue-turbolinks'
 import VueResource from 'vue-resource'
 
-import App from '../vue/movies/app.vue'
+import App from '../vue/movies/App.vue'
 
 Vue.use(VueResource)
 Vue.use(TurbolinksAdapter)
