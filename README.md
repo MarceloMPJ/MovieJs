@@ -22,3 +22,8 @@ Create the databases:
 $ sudo -u postgres createdb movie_js
 $ sudo -u postgres createdb movie_js_test
 ```
+Create tables and populate the database:
+```sh
+rake db:schema:load
+rake db:seed
+```
