@@ -4,7 +4,6 @@
       <span class="fav-text">Favoritos</span>
       <div class="group-by">
         <span>Agrupar por</span>
-        {{ group }}
         <select v-model="group_by">
           <option value=""></option>
           <option value="director">Diretor</option>
@@ -34,10 +33,12 @@
         , {})
       group_by_gender: -> @func_group_by('main_genre')
       group_by_director: -> @func_group_by('director')
+      group_by_date: ->@func_group_by('release_year')
     computed:
       groups: -> switch @group_by
         when 'gender' then @group_by_gender()
         when 'director' then @group_by_director()
+        when 'date' then @group_by_date()
         else []
     components: {
       FavoriteGroup

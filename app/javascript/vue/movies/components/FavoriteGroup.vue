@@ -4,7 +4,7 @@
       <div class="card-header" :id="'heading-' + group_id">
         <h5 class="mb-0">
           <button class="btn btn-link" data-toggle="collapse" :data-target="'#collapse-' + group_id" aria-expanded="false" :aria-controls="'collapse-' + group_id">
-            {{title}}
+            {{ i18n_title }}
           </button>
         </h5>
       </div>
@@ -26,6 +26,14 @@
     components: {
       FavoriteMovie
     }
+    computed:
+      i18n_title: -> switch @title
+        when 'action' then 'Ação'
+        when 'fantasy' then 'Fantasia'
+        when 'drama' then 'Drama'
+        when 'scifi' then 'Ficção Científica'
+        when 'comedy' then 'Comédia'
+        else @title
 </script>
 
 <style lang="scss" scoped>
