@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_000217) do
+ActiveRecord::Schema.define(version: 2019_03_12_200330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_03_05_000217) do
     t.string "director"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
+    t.string "youtube_id"
   end
 
 end
