@@ -1,6 +1,6 @@
 <template>
 <div class="movie">
-  <div class="row">
+  <div v-if="movie.selected" class="row">
     <div class="col-12">
       <div class="movie-info">
         <h2>{{movie.title}} ({{movie.release_year}})</h2>
@@ -8,11 +8,11 @@
       </div>
       <div class="movie-midia row">
         <div class="movie-image">
-          <img src="https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SY1000_CR0,0,675,1000_AL_.jpg">
+          <img v-bind:src="movie.photo_url">
         </div>
         <div class="movie-trailer">
           <iframe id="ytplayer" type="text/html" width="640" height="360"
-            src="http://www.youtube.com/embed/Q0CbN8sfihY"
+            v-bind:src="youtube_link"
             frameborder="0"/>
         </div>
       </div>
@@ -29,7 +29,9 @@
 <script lang="coffee">
   export default
     name: "MovieBody"
-    props: ["movie"]
+    props: ['movie']
+    computed:
+      youtube_link: -> "http://www.youtube.com/embed/#{@movie.youtube_id}"
 </script>
 
 <style lang="scss" scoped>

@@ -14,21 +14,16 @@
 <script lang="coffee">
   export default
     name: "Movies"
-    props: ["movie"]
-    data: =>
-      movies: []
+    props: ["movies", "movie"]
     methods:
       openMovie: (movie) ->
         @movie.title        = movie.title
         @movie.director     = movie.director
         @movie.release_year = movie.release_year
         @movie.description  = movie.description
-    created: ->
-      $.ajax
-        type: "GET"
-        url: "/movies.json"
-        success: (movies) =>
-          @movies = movies
+        @movie.photo_url    = movie.photo_url
+        @movie.youtube_id   = movie.youtube_id
+        @movie.selected     = true
 </script>
 
 <style lang="scss" scoped>

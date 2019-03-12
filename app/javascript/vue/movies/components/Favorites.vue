@@ -4,7 +4,9 @@
       <span class="fav-text">Favoritos</span>
       <div class="group-by">
         <span>Agrupar por</span>
-        <select>
+        {{ group }}
+        <select v-model="group_by">
+          <option value=""></option>
           <option value="director">Diretor</option>
           <option value="gender">Genero</option>
           <option value="date">Data de lançamento</option>
@@ -12,10 +14,7 @@
       </div>
     </div>
     <div class="favorites-content">
-      <FavoriteGroup :title="'Ação'" :group_id="1"/>
-      <FavoriteGroup :title="'Aventura'" :group_id="2"/>
-      <FavoriteGroup :title="'Fantasia'" :group_id="3"/>
-      <FavoriteGroup :title="'Sci-fi'" :group_id="4"/>
+      <FavoriteGroup v-for="(value, key, index) in groups" :title="key" :group_id="index" :movies="value"/>
     </div>
   </div>
 </template>
@@ -24,7 +23,22 @@
   import FavoriteGroup from './FavoriteGroup'
 
   export default
-    data: () => {}
+    data: () =>  return { group_by: "" }
+    props:
+      favorites: null
+    methods:
+      func_group_by: (key) ->
+        @favorites.reduce((rv, x) ->
+          (rv[x[key]] = rv[x[key]] || []).push(x)
+          rv
+        , {})
+      group_by_gender: -> @func_group_by('main_genre')
+      group_by_director: -> @func_group_by('director')
+    computed:
+      groups: -> switch @group_by
+        when 'gender' then @group_by_gender()
+        when 'director' then @group_by_director()
+        else []
     components: {
       FavoriteGroup
     }

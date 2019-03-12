@@ -1,8 +1,8 @@
 <template>
   <div id="moviejs" class="row">
-     <Movies :movie="movie"/>
+     <Movies :movies="movies" :movie="movie"/>
      <MovieBody :movie="movie"/>
-     <Favorites/>
+     <Favorites :favorites="movies"/>
   </div>
 </template>
 
@@ -13,12 +13,21 @@ import Favorites     from './components/Favorites'
 
 export default
   data: () => {
+    movies: Array
     movie:
-      title: String
+      type: Object
       director: String
       release_year: Number
       description: String
+      photo_url: String
+      youtube_id: String
+      selected: false
   }
+  created: ->
+    $.ajax
+      type: "GET"
+      url: "/movies.json"
+      success: (movies) => @movies = movies
   components: {
     Movies,
     MovieBody,

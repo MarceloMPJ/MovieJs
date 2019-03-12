@@ -10,11 +10,7 @@
       </div>
 
       <div :id="'collapse-' + group_id" class="collapse" :aria-labelledby="'heading-' + group_id" data-parent=".group-header">
-        <FavoriteMovie/>
-        <FavoriteMovie/>
-        <FavoriteMovie/>
-        <FavoriteMovie/>
-        <FavoriteMovie/>
+        <FavoriteMovie v-for="movie in movies" :photo_url="movie.photo_url" :title="movie.title" :director="movie.director" :release_year="movie.release_year" :description="movie.description" />
       </div>
     </div>
   </div>
@@ -25,7 +21,7 @@
 
   export default
     name: "FavoriteGroup"
-    props: ["title", "group_id"]
+    props: ["title", "group_id", "movies"]
     data: () => {}
     components: {
       FavoriteMovie
