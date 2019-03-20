@@ -30,6 +30,16 @@ rake db:seed
 
 ### C9 installation
 ```sh
+./c9.sh
+createuser userc9 -dslP
+```
+Create the ```database.yml``` file based on ```database.yml.sample```.
+Create tables and populate the database:
+```sh
 rake db:schema:load
-rake db
+rake db:seed
+```
+Run que server
+```sh
+rails s -b $IP -p $PORT
 ```
