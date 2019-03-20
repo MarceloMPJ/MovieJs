@@ -59,11 +59,19 @@
         margin-right: 140px;
         img {
           max-height: 359px;
-          max-width: 251px;
+          max-width: 243px;
         }
       }
       .movie-trailer {
         display: inline-block;
+      }
+      @media only screen and (max-width: 1366px) {
+        .movie-image {
+          margin: auto;
+        }
+        .movie-trailer {
+          display: none;
+        }
       }
     }
     .movie-description {

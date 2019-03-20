@@ -7,7 +7,7 @@
         <select v-model="group_by">
           <option value=""></option>
           <option value="director">Diretor</option>
-          <option value="gender">Genero</option>
+          <option value="gender">Gênero</option>
           <option value="date">Data de lançamento</option>
         </select>
       </div>

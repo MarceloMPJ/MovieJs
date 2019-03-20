@@ -1,5 +1,12 @@
 <template>
 <div class="movie-list-div">
+  <div class="order-by">
+    <span>Ordenar por</span>
+    <select v-model="order_by">
+      <option value=""></option>
+      <option value="date">Data de lançamento</option>
+    </select>
+  </div>
   <ul class="movie-list">
     <li v-for="movie in movies" :key="movie.id" @click="openMovie(movie)">
       <div class="movie-card">
@@ -30,6 +37,14 @@
   .movie-list-div {
     width: 300px;
     padding-left: 25px;
+    .order-by {
+      background-color: black;
+      color: white;
+      padding: 5px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+      margin-bottom: -1px;
+    }
     .movie-list {
       border: 1px solid #c7c7c7;
       border-radius: 4px;
