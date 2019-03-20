@@ -27,3 +27,9 @@ Create tables and populate the database:
 rake db:schema:load
 rake db:seed
 ```
+
+### C9 installation
+```sh
+rake db:schema:load
+rake db
+```

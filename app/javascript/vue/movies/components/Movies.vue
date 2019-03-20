@@ -22,6 +22,7 @@
   export default
     name: "Movies"
     props: ["movies", "movie"]
+    data: () =>  { order_by: "" }
     methods:
       openMovie: (movie) ->
         @movie.title        = movie.title
